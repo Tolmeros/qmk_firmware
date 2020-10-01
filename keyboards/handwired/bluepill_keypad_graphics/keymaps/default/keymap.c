@@ -22,31 +22,25 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define _FNONE 1
 //#define _FNTWO 2
 
+enum custom_keycodes {
+    LCTL_Z = SAFE_RANGE,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+    case LCTL_Z:
+        if (record->event.pressed) {
+            SEND_STRING(SS_LCTL("z"));
+        }
+        break;
+    }
+    return true;
+};
+
 // Highly Modified by Xydane
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NORMAL] = LAYOUT_seventy_ansi(
   KC_LCTL, KC_LALT, \
   KC_I, KC_LSPO, \
-  KC_TAB, KC_Z )
+  KC_TAB, LCTL_Z )
 };
-
-/* Layer based ilumination, just binary */
-layer_state_t layer_state_set_user(layer_state_t state) {
-  /*
-  switch (get_highest_layer(state)) {
-  case _FNONE:
-    palSetPad(GPIOA, 0);  //OFF Color A
-    palClearPad(GPIOA, 1); //ON Color B
-    break;
-  case _FNTWO:
-    palClearPad(GPIOA, 0); //ON Color A
-    palClearPad(GPIOA, 1);  //ON Color B
-    break;
-  default: //  for any other layers, or the default layer
-    palClearPad(GPIOA, 0); //ON Color A
-    palSetPad(GPIOA, 1);  //OFF Color B
-    break;
-  }
-  */
-  return state;
-}
