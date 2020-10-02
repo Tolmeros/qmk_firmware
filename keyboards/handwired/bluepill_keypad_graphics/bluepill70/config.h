@@ -19,3 +19,10 @@
 // Iso fix for Space Cadet, comment for ANSI layouts
 //#define LSPO_KEY KC_8
 //#define RSPC_KEY KC_9
+
+#define ENCODERS_PAD_A { B1 }
+#define ENCODERS_PAD_B { B0 }
+
+//#define ENCODER_DIRECTION_FLIP
+
+
