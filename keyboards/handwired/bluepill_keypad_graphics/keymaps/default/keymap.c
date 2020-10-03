@@ -41,7 +41,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NORMAL] = LAYOUT_seventy_ansi(
   KC_LCTL, KC_LALT, \
-  KC_I, KC_LSPO, \
+  KC_I, KC_LSHIFT, \
   KC_TAB, LCTL_Z )
 };
 

@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_NORMAL] = LAYOUT_seventy_iso(
   KC_LCTL, KC_LALT, \
-  KC_I, KC_LSPO, \
+  KC_I, KC_LSHIFT, \
   KC_TAB, KC_Z )
 };
 
